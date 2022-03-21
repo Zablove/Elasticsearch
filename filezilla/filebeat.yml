@@ -1,0 +1,9 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+  - C:\Program Files (x86)\FileZilla Server\Logs\*.log
+# ------------------------------ Logstash Output -------------------------------
+output.logstash:
+  # The Logstash hosts, specify IP
+  hosts: ["x.x.x.x:5045"]
