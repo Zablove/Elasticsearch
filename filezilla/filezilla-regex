@@ -1,0 +1,6 @@
+#Place file in /etc/logstash/patterns/
+#Custom Grok rules to mach Filezilla FTP logs:
+FILEZILLA_USER [a-zA-Z0-9@.\(\) ]+
+FILEZILLA_ID \(%{BASE10NUM:fz_id:int}\)
+FILEZILLA_IP %{NOTSPACE}%{IPV4:fz_ip}%{NOTSPACE}
+FILEZILLA_DATESTAMP %{MONTHNUM}/%{MONTHDAY}/%{YEAR} %{HOUR}:%{MINUTE}:%{SECOND} %{WORD}
